@@ -13,7 +13,7 @@ def main():
     
     check_and_build()
     
-    patient_dir = "output/patient"
+    patient_dir = "output/Patient"
     for filename in os.listdir(patient_dir):
         file_path = os.path.join(patient_dir, filename)
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -25,10 +25,10 @@ def main():
 
     observation_dir = "output/BC"
     for filename in os.listdir(observation_dir):
-        file_path = os.path.join(observation_dir)
+        file_path = os.path.join(observation_dir, filename)
         with open(file_path, 'r', encoding='utf-8') as file:
             observation_data = json.load(file)
-            tf = Observation_put(observation_data, filename)
+            tf = Observation_put(observation_data)
         if tf:
             shutil.move(f"output/BC/{filename}", f"output/success/BC/{filename}")
 
