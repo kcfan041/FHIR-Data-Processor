@@ -260,8 +260,8 @@ def name_create():
     first_names = ['偉', '芳', '娜', '敏', '靜', '麗', '強', '磊', '軍', '洋', '勇', '艷', '傑', '浩', '鑫']
     surname = random.choice(surnames)
     first_name = ''.join(random.choice(first_names) for _ in range(2))
-    total_name = "連大刀"
-    return total_name
-    # return surname + first_name
+    # total_name = "連大刀"
+    # return total_name
+    return surname + first_name
     
 main()
