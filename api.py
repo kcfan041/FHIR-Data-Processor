@@ -68,8 +68,9 @@ def Observation_put(observation_data):
         subject_reference = observation_data["subject"]["reference"]
         patient_id = re.search(r"Patient/(.*)", subject_reference).group(1)
         time = observation_data["effectiveDateTime"]
-        name = observation_data["code"]["coding"][0]["display"].replace()
-        print("Observation updated successfully.")
+        name = observation_data["code"]["coding"][0]["display"].replace(" ", "_")
+        total = patient_id + time + name
+        print(f"Observation {total} updated successfully.")
         print("Status Code:", response.status_code)
         print("Response:", response.json())
     else:
