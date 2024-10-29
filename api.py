@@ -7,6 +7,7 @@ import os
 import re
 
 
+base_url = "https://kcfhir.dicom.tw/fhir"
 
 def main():
     
@@ -32,7 +33,6 @@ def main():
             shutil.move(f"output/BC/{filename}", f"output/success/BC/{filename}")
 
 
-base_url = "https://kcfhir.dicom.tw/fhir"
 def Patient_put(id, patient_data):
     time.sleep(0.3)
     # FHIR 伺服器 URL
