@@ -47,10 +47,9 @@ def main():
                         Patient["gender"] = "unknown"
                     match = re.search(r'\[(.+?)-(.+?)\]', body["birth_year"])
                     year = (match.group(1) + "0" * (4 - len(match.group(1))))[:4]
-                    month = str(random.randint(1, 12)).zfill(2)
-                    day = str(random.randint(1, 28)).zfill(2)
-                    Patient["birthDate"] = f"{year}-{month}-{day}"
-                    Patient["birthDate"] = "1000-10-10"
+                    # month = str(random.randint(1, 12)).zfill(2)
+                    # day = str(random.randint(1, 28)).zfill(2)
+                    Patient["birthDate"] = f"{year}-01-01"
                     with open(f"./output/Patient/{generated_uuid}.json", 'w', encoding='utf8') as jfile:
                         json.dump(Patient, jfile)
                 else:
