@@ -104,8 +104,8 @@ def main():
                         N_BC = copy.deepcopy(ex["common"])
                         N_BC["code"] = ex["bloodpressure"]["code"]
                         N_BC["component"] = ex["bloodpressure"]["component"]
-                        N_BC["component"][0]["valueQuantity"] = float(body["systolic_blood_pressure"])        
-                        N_BC["component"][1]["valueQuantity"] = float(body["diastolic_blood_pressure"])
+                        N_BC["component"][0]["valueQuantity"]["value"] = float(body["systolic_blood_pressure"])        
+                        N_BC["component"][1]["valueQuantity"]["value"] = float(body["diastolic_blood_pressure"])
                         N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["bloodpressure"]["meta"]
