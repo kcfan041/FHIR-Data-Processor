@@ -63,7 +63,7 @@ def main():
                         N_BC["code"] = ex["height"]["code"]
                         N_BC["valueQuantity"] = ex["height"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["height"])
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["height"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_height.json', 'w', encoding='utf8') as jfile:
@@ -77,7 +77,7 @@ def main():
                         N_BC["code"] = ex["weight"]["code"]
                         N_BC["valueQuantity"] = ex["weight"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["weight"])     
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["weight"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_weight.json', 'w', encoding='utf8') as jfile:
@@ -91,7 +91,7 @@ def main():
                         N_BC["code"] = ex["waist"]["code"]
                         N_BC["valueQuantity"] = ex["waist"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["waist_circumference"])
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["waist"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_waist.json', 'w', encoding='utf8') as jfile:
@@ -106,7 +106,7 @@ def main():
                         N_BC["component"] = ex["bloodpressure"]["component"]
                         N_BC["component"][0]["valueQuantity"]["value"] = float(body["systolic_blood_pressure"])        
                         N_BC["component"][1]["valueQuantity"]["value"] = float(body["diastolic_blood_pressure"])
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["bloodpressure"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_bloodpressure.json', 'w', encoding='utf8') as jfile:
@@ -120,7 +120,7 @@ def main():
                         N_BC["code"] = ex["SpO2"]["code"]
                         N_BC["valueQuantity"] = ex["SpO2"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["peripheral_oxyhemoglobin_saturation"])
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["SpO2"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_SpO2.json', 'w', encoding='utf8') as jfile:
@@ -134,7 +134,7 @@ def main():
                         N_BC["code"] = ex["glucose"]["code"]
                         N_BC["valueQuantity"] = ex["glucose"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["blood_sugar"])
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["glucose"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_glucose.json', 'w', encoding='utf8') as jfile:
@@ -148,7 +148,7 @@ def main():
                         N_BC["code"] = ex["heartrate"]["code"]
                         N_BC["valueQuantity"] = ex["heartrate"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["heart_rate"])     
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["heartrate"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_heartrate.json', 'w', encoding='utf8') as jfile:
@@ -162,7 +162,7 @@ def main():
                         N_BC["code"] = ex["restingheartrate"]["code"]
                         N_BC["valueQuantity"] = ex["restingheartrate"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["resting_heart_rate"])    
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"  
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"  
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["restingheartrate"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_restingheartrate.json', 'w', encoding='utf8') as jfile:
@@ -176,7 +176,7 @@ def main():
                         N_BC["code"] = ex["meanheartrate"]["code"]
                         N_BC["valueQuantity"] = ex["meanheartrate"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["average_heart_rate"])    
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"  
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"  
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["meanheartrate"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_meanheartrate.json', 'w', encoding='utf8') as jfile:
@@ -190,7 +190,7 @@ def main():
                         N_BC["code"] = ex["heartratevariability"]["code"]
                         N_BC["valueQuantity"] = ex["heartratevariability"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["heart_rate_variability"])       
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["heartratevariability"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_heartratevariability.json', 'w', encoding='utf8') as jfile:
@@ -204,7 +204,7 @@ def main():
                         N_BC["code"] = ex["temperature"]["code"]
                         N_BC["valueQuantity"] = ex["temperature"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["temperature"])        
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["temperature"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_temperature.json', 'w', encoding='utf8') as jfile:
@@ -218,7 +218,7 @@ def main():
                         N_BC["code"] = ex["respiratoryrate"]["code"]
                         N_BC["valueQuantity"] = ex["respiratoryrate"]["valueQuantity"]
                         N_BC["valueQuantity"]["value"] = float(body["respiratory_rate"])
-                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-") + "Z"
+                        N_BC["effectiveDateTime"] = body["start_date"].replace(" ", "T").replace("/", "-").replace(".", ":") + "Z"
                         N_BC["subject"]["reference"] = f"Patient/{generated_uuid}"
                         N_BC["meta"] = ex["respiratoryrate"]["meta"]
                         with open(f'./output/BC/{generated_uuid}_{time}_respiratoryrate.json', 'w', encoding='utf8') as jfile:
