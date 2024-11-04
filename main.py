@@ -46,7 +46,7 @@ def main():
                     else:
                         Patient["gender"] = "unknown"
                     match = re.search(r'\[(.+?)-(.+?)\]', body["birth_year"])
-                    year = (match.group(1) + "0" * (4 - len(match.group(1))))[:4]
+                    year = (match.group(1) + "9" * (len(match.group(1)) == 1) + "0" * (4 - len(match.group(1))))[:4]
                     # month = str(random.randint(1, 12)).zfill(2)
                     # day = str(random.randint(1, 28)).zfill(2)
                     Patient["birthDate"] = f"{year}-01-01"
